@@ -1,0 +1,28 @@
+[plugin]
+name = "local-cover-art"
+display_name = "Local Cover Art"
+version = "1.0.0"
+api_version = 0
+entrypoint = "plugin:LocalCoverArt"
+capabilities = ["metadata_provider"]
+description = "Serves the cover art already in your files - embedded, or a cover.jpg beside them - for albums the online providers cannot supply."
+author = "TheSmuks"
+homepage = "https://github.com/TheSmuks/dn-local-cover-art"
+
+[[settings]]
+key = "prefer_local"
+label = "Prefer local art over the online providers"
+help = "Off (default): local art is only used when Cover Art Archive, TheAudioDB and the rest come back empty. On: art found in your own files wins, and the providers are never asked. Turn this on if your tags are curated and you want the exact artwork you filed."
+secret = false
+
+[[settings]]
+key = "folder_images"
+label = "Also use folder images"
+help = "On (default): when no track carries embedded art, look for cover / folder / front / album / albumart / artwork (.jpg, .jpeg, .png, .webp, .gif) in the album's directory."
+secret = false
+
+[[settings]]
+key = "max_files_scanned"
+label = "Tracks to scan per album"
+help = "How many of an album's files to open looking for embedded art before giving up. 12 by default; raise it only if you have albums where just the last tracks carry art."
+secret = false
